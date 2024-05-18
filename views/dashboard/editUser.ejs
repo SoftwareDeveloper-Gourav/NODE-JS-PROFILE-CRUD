@@ -1,0 +1,78 @@
+<%- include('./header'); %>
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 m-auto">
+      <div class="card shadow">
+        <form action="/dashboard/edit/<%= user._id %>" method="post">
+            <div class="p-4">
+                <div class="mb-3 row">
+                 <h5>Edit user </h5> <br>
+                </div>
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-2 col-form-label"
+                    >Name</label 
+                  > 
+                  <div class="col-sm-10">
+                    <input type="text" name="name" class="form-control" id="inputPassword" placeholder="Type user name" value="<%= user.name  %>" />
+                  </div>
+                </div>
+      
+                <div class="mb-3 row">
+                  <label for="inputPassword"  class="col-sm-2 col-form-label"
+                    >Email</label
+                  >
+                  <div class="col-sm-10">
+                    <input type="text" name="email" class="form-control" id="inputPassword" placeholder="Type user email" value="<%= user.email  %>" />
+                  </div>
+                </div>
+      
+                <div class="mb-3 row">
+                  <label for="inputPassword"  class="col-sm-2 col-form-label"
+                    >Phone</label
+                  >
+                  <div class="col-sm-10">
+                    <input type="text" name="number" class="form-control" id="inputPassword" placeholder="Type user phone number" value="<%= user.phone_number  %>" />
+                  </div>
+                </div>
+      
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-2 col-form-label"
+                    >DOB</label
+                  >
+                  <div class="col-sm-10">
+                    <input type="date" name="dob" class="form-control" id="inputPassword"  value="<%= user.dob  %>" required/>
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-2 col-form-label"
+                    > Gender</label
+                  >
+                  <div class="col-sm-10">
+                    <select name="gander" id="" class="form-control">
+                      <option value="">Select Gender</option>
+                      <option value="M" <%  if(user.gander=="M")
+                      { %>
+                        selected
+                        <% } %>  >Male</option>
+                      <option  <%  if(user.gander=="F")
+                      { %>
+                        selected
+                        <% } %>   value="F">Female</option>
+                      <option  <%  if(user.gander=="O")
+                      { %>
+                        selected
+                        <% } %> value="O">Others</option>
+                    </select>
+                  </div>
+                  <div class="mt-4 mb-3">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
+              </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('./footer'); %>

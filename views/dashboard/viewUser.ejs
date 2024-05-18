@@ -1,0 +1,51 @@
+<%- include('./header'); %> <br> <br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 m-auto">
+      <div class="card shadow">
+        <div class="p-4">
+        <div class=""><h5>Users Table</h5></div> <br>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Number</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let no =1; %>
+<% data.forEach((user)=>{ %>
+  <tr>
+    <th scope="row"><%= no++;  %></th>
+    <td><%= user.name  %></td>
+    <td><% if(user.gander=="M"){ %>
+       <%= "Male" %>
+       <% } else if(user.gander=="F"){ %>
+        <%= "Female" %>
+       <% }else{ %>
+  <%= "Others"  %>
+       <% } %> 
+      
+      </td>
+    <td><%= user.phone_number  %></td>
+     <% const date =user.dob.getDate()+"/"+user.dob.getMonth()+"/"+user.dob.getFullYear();  %>
+    <td><%= date  %></td>
+    <td><a href="/dashboard/edit/<%= user._id %>"><button class="btn btn-sm btn-success">Edit</button></a></td>
+    <td><a href="/dashboard/delete/<%= user._id %>"><button class="btn btn-sm btn-danger">Delete</button></a></td>
+  </tr>
+<% }) %>
+             
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<%- include('./footer'); %>

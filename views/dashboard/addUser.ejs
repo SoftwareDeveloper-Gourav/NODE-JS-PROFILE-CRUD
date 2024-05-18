@@ -1,0 +1,70 @@
+<%- include('./header'); %>
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 m-auto">
+      <div class="card shadow">
+        <form action="" method="post">
+            <div class="p-4">
+                <div class="mb-3 row">
+                 <h5>Add new user </h5> <br>
+                <% if(msg){ %><div class="alert alert-<%= icon %>"><%= msg %></div> <% } %>
+                </div>
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-2 col-form-label"
+                    >Name</label 
+                  > 
+                  <div class="col-sm-10">
+                    <input type="text" name="name" class="form-control" id="inputPassword" placeholder="Type user name" />
+                  </div>
+                </div>
+      
+                <div class="mb-3 row">
+                  <label for="inputPassword"  class="col-sm-2 col-form-label"
+                    >Email</label
+                  >
+                  <div class="col-sm-10">
+                    <input type="text" name="email" class="form-control" id="inputPassword" placeholder="Type user email" />
+                  </div>
+                </div>
+      
+                <div class="mb-3 row">
+                  <label for="inputPassword"  class="col-sm-2 col-form-label"
+                    >Phone</label
+                  >
+                  <div class="col-sm-10">
+                    <input type="text" name="number" class="form-control" id="inputPassword" placeholder="Type user phone number" />
+                  </div>
+                </div>
+      
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-2 col-form-label"
+                    >DOB</label
+                  >
+                  <div class="col-sm-10">
+                    <input type="date" name="dob" class="form-control" id="inputPassword"  />
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-2 col-form-label"
+                    > Gander</label
+                  >
+                  <div class="col-sm-10">
+                    <select name="gander" id="" class="form-control">
+                      <option value="">Select Gander</option>
+                      <option value="M">Male</option>
+                      <option value="F">Female</option>
+                      <option value="O">Others</option>
+                    </select>
+                  </div>
+                  <div class="mt-4 mb-3">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
+              </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('./footer'); %>
